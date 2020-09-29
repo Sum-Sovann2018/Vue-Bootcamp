@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>vue_components</title>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      </head>
+      <body>
+            <div id="app">
+                  <kit></kit>
+            </div> 
+      </body>
+</html>
+<script>
+      // Components are one of the most powerful features of Vue. js. They help you extend basic HTML elements to encapsulate reusable code. At a high level, Components are custom elements that Vue.js' compiler would attach specified behavior to.
+      Vue.component('kit',{
+            template: '<p> {{schoolName}} <button v-on:click="getAscii" v-if="check">Sum Up Ascii Value </button></p>',
+            data: function() {
+                  return{
+                        schoolName: 'Kirirom Institute of Technology',
+                        check : true
+                  }
+            },
+            methods:{
+                  getAscii:function(){
+                       var plus = 0
+                       this.check = false
+                       for(var i = 0 ; i<this.schoolName.length; i++){
+                              plus = plus + this.schoolName.charCodeAt(i) 
+                              
+                       }
+                       this.schoolName ="Sum up ascii value of SchoolName = "+ plus;
+                       
+                  }
+                 
+            }
+      });
+
+      var app = new Vue({
+            el: '#app',
+            data:{
+                   
+            },
+            
+      });
+      
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>nested_vue_components</title>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      </head>
+      <body>
+            <div id="app">
+                  <inner></inner>
+                  <outer></outer>
+            </div> 
+      </body>
+</html>
+<script>
+      Vue.component('inner',{
+            template: '<div><li v-for="studentDetail in studentDetails">{{studentDetail.id}}: {{studentDetail.name}} : {{studentDetail.age}} </li></div>',
+            data : function (){
+                  return{
+                        studentDetails: [
+                              {
+                                    id:01,
+                                    name: 'Kimhorng',
+                                    age: '19'
+                              },
+                              {
+                                    id:02,
+                                    name: 'sovann',
+                                    age: '23'
+                              },
+                              {
+                                    id:03,
+                                    name: 'jinjeson',
+                                    age: '20'
+                              },
+                              {
+                                    id:04,
+                                    name: 'mulan',
+                                    age: '23'
+                              },
+                              {
+                                    id:05,
+                                    name: 'dara',
+                                    age: '25'
+                              }
+                        ] 
+                  }
+            }
+      });
+      Vue.component('outer',{
+            template: '<div><ol v-for="studentDetail in studentDetails">{{studentDetail.id}}: {{studentDetail.name}} : {{studentDetail.age}} </ol></div>',
+            data : function (){
+                  return{
+                        studentDetails: [
+                              {
+                                    id:01,
+                                    name: 'sola',
+                                    age: '19'
+                              },
+                              {
+                                    id:02,
+                                    name: 'nita',
+                                    age: '23'
+                              },
+                              {
+                                    id:03,
+                                    name: 'sara',
+                                    age: '20'
+                              },
+                              {
+                                    id:04,
+                                    name: 'dada',
+                                    age: '23'
+                              },
+                              {
+                                    id:05,
+                                    name: 'daddy',
+                                    age: '25'
+                              }
+                        ] 
+                  }
+            }
+      });
+      var app = new Vue({
+            el: '#app',
+            data:{
+                  
+            }
+      })
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+
+    <div id="app">
+
+        <table >
+            <tr >
+                  <td style="border: 1px solid rgb(14, 7, 43);" v-for="table_detail in table_details">
+                        <ol>
+                               {{table_detail.id}} : {{table_detail.name}} : {{table_detail.age}} 
+                        </ol>
+                  </td>
+            </tr>
+        </table>
+
+    </div>
+    
+</body>
+</html>
+<script>
+    var app = new Vue ({
+        el: '#app',
+        data:{
+            table_details:[
+                {
+                    id:1,
+                    name:'sovann',
+                    age:'19'
+                },
+                {
+                    id:2,
+                    name:'kimhoung',
+                    age:'19'
+                },
+                {
+                    id:3,
+                    name:'jinjeson',
+                    age:'19'
+                },
+                {
+                    id:4,
+                    name:'yanty',
+                    age:'19'
+                },
+                {
+                    id:5,
+                    name:'ariya',
+                    age:'19'
+                }
+            ]
+           
+           
+        },
+    
+        
+    })
+</script>

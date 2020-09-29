@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+
+<body>
+
+    <div id="app">
+
+        <input v-model="putname" placeholder="Enter your name here">
+
+        <h1 v-if="name == putname" v-bind:style="myStyle1">Access Grantedwelcome Mr/Ms.{{putname}} </h1>
+        <h1 v-else-if="name != putname" v-bind:style="myStyle2"> Access Denied Sorry Mr/Ms.{{putname}} </h1>
+        <h1 v-else="name == '' " v-bind:style="myStyle3"></h1>
+ 
+
+       
+
+    </div>
+    
+</body>
+</html>
+<script>
+    var app = new Vue ({
+        el: '#app',
+        data:{
+            putname:'',
+            name:'Sovann Sum',
+            myStyle1:{
+                color:'green'
+            }     ,      
+            myStyle2:{
+                color:'red'
+            }    
+           
+           
+        },
+    
+        
+    })
+</script>

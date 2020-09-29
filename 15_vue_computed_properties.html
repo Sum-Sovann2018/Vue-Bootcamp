@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>vue_computed_properties</title>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      </head>
+      <body>
+            <div id="app">
+                 <button @click="name = reversedMessage">Click</button>
+            </div> 
+      </body>
+</html>
+<script>
+      var app = new Vue({
+            el: '#app',
+            data:{
+                  name: 'Hello'
+            },
+          
+            computed: {
+                  reversedMessage: function()  {
+                        console.log(this.name.split('').reverse().join(''))
+                  }
+            }
+      })
+</script>
